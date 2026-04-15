@@ -1,0 +1,20 @@
+# Virtual environment
+venv/
+
+# Secret keys — NEVER push to GitHub
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
