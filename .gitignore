@@ -1,20 +1,19 @@
-# Virtual environment
-venv/
+# Python bytecode
+__pycache__/
+*.py[cod]
 
-# Secret keys — NEVER push to GitHub
+# Virtual Environments
+venv/
+env/
 .env
 
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-
-# Jupyter checkpoints
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# OS files
+# Data files (optional - ignore if they are too large for GitHub)
+*.csv
+*.xlsx
+
+# System files
 .DS_Store
 Thumbs.db
-
-# VS Code settings
-.vscode/
