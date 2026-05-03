@@ -25,11 +25,11 @@ The primary goal of this project is to analyze historical sales data to identify
 
 ## 🖼️ Final Visualizations
 
-### 1. Top 10 Selling Products
-<img src="https://raw.githubusercontent.com/jaishdahiya6-del/amazon-sales-analysis/main/visualizations/top_10_products.png" width="800">
+### 1. Top 10 Best Selling Products (SKUs)
+<img src="https://raw.githubusercontent.com/jaishdahiya6-del/amazon-sales-analysis/main/visualizations/08_top_skus.png" width="800">
 
-### 2. Rating vs Discount Correlation
-<img src="https://raw.githubusercontent.com/jaishdahiya6-del/amazon-sales-analysis/main/visualizations/discount_vs_rating_scatter.png" width="800">
+### 2. Sales Distribution by Category
+<img src="https://raw.githubusercontent.com/jaishdahiya6-del/amazon-sales-analysis/main/visualizations/01_sales_by_category.png" width="800">
 
 ## ⚙️ How to Run
 1. Clone the repository:
