@@ -17,11 +17,18 @@ The primary goal of this project is to analyze historical sales data to identify
 * **Libraries:** Pandas, NumPy, Matplotlib, Seaborn
 * **Tools:** Jupyter Notebook, Git/GitHub
 
-## 📊 Key Insights (Planned)
-* [ ] Monthly and Quarterly sales growth analysis.
-* [ ] Correlation between pricing and sales volume.
-* [ ] Identification of top-performing regions and product categories.
-* [ ] Analysis of customer ratings and their impact on sales.
+## 📊 Key Insights (Completed - Day 14)
+* ✅ **Top Categories:** Electronics and accessories dominate the library, showing high-frequency repeat purchases.
+* ✅ **Pricing Strategy:** Analyzed the correlation between discounts and ratings; quality remains the primary driver for high ratings over price drops.
+* ✅ **Product Performance:** Identified the Top 10 selling products based on user engagement (Rating Counts).
+* ✅ **Data Cleaning:** Handled missing values (NaN) and performed data type conversion for professional analysis.
+
+## 🖼️ Final Visualizations
+### 1. Top 10 Selling Products
+![Top 10 Products](./visualizations/top_10_products.png)
+
+### 2. Rating vs Discount Correlation
+![Discount Scatter Plot](./visualizations/discount_vs_rating_scatter.png)
 
 ## ⚙️ How to Run
 1. Clone the repository:
