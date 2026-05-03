@@ -24,11 +24,12 @@ The primary goal of this project is to analyze historical sales data to identify
 * ✅ **Data Cleaning:** Handled missing values (NaN) and performed data type conversion for professional analysis.
 
 ## 🖼️ Final Visualizations
+
 ### 1. Top 10 Selling Products
-![Top 10 Products](./visualizations/top_10_products.png)
+<img src="https://raw.githubusercontent.com/jaishdahiya6-del/amazon-sales-analysis/main/visualizations/top_10_products.png" width="800">
 
 ### 2. Rating vs Discount Correlation
-![Discount Scatter Plot](./visualizations/discount_vs_rating_scatter.png)
+<img src="https://raw.githubusercontent.com/jaishdahiya6-del/amazon-sales-analysis/main/visualizations/discount_vs_rating_scatter.png" width="800">
 
 ## ⚙️ How to Run
 1. Clone the repository:
