@@ -1,36 +1,34 @@
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
+import numpy as np
 
-# 1. Clean and combine the features we want to compare
-df['combined_features'] = df['description'] + " " + df['listed_in'] + " " + df['cast']
-df['combined_features'] = df['combined_features'].fillna('')
+def optimize_sales_data(df):
+    """
+    Optimizes data types and performs vectorized calculations for Amazon Sales data.
+    """
+    # 1. Memory Optimization: Convert 'Category' to category type
+    if 'Category' in df.columns:
+        df['Category'] = df['Category'].astype('category')
 
-# 2. Convert text to numbers using TF-IDF
-tfidf = TfidfVectorizer(stop_words='english')
-tfidf_matrix = tfidf.fit_transform(df['combined_features'])
+    # 2. Vectorized Calculation: Profit Margin
+    # Avoiding loops for speed
+    df['Profit_Margin'] = (df['Profit'] / df['Sales']) * 100
 
-# 3. Calculate the Cosine Similarity
-cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
+    # 3. High-Performance Grouping
+    # Calculate average shipping time and total sales per category
+    category_metrics = df.groupby('Category').agg({
+        'Sales': 'sum',
+        'Profit': 'mean',
+        'Quantity': 'sum'
+    }).sort_values(by='Sales', ascending=False)
 
-# 4. Function to get recommendations
-def get_recommendations(title, cosine_sim=cosine_sim):
-    # Get the index of the movie that matches the title
-    idx = df[df['title'] == title].index[0]
+    print("🚀 Optimization complete. Calculated metrics for", len(category_metrics), "categories.")
+    return df, category_metrics
 
-    # Get the pairwise similarity scores
-    sim_scores = list(enumerate(cosine_sim[idx]))
-
-    # Sort the movies based on similarity scores
-    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-
-    # Get the scores of the 5 most similar movies
-    sim_scores = sim_scores[1:6]
-
-    # Get the movie indices
-    movie_indices = [i[0] for i in sim_scores]
-
-    # Return the top 5 most similar movies
-    return df['title'].iloc[movie_indices]
-
-# Test it!
-print(get_recommendations('Blood & Water'))
+if __name__ == "__main__":
+    # Test with a mock setup or your actual amazon_sales.csv
+    try:
+        data = pd.read_csv('amazon_sales.csv')
+        optimized_df, metrics = optimize_sales_data(data)
+        metrics.to_csv('category_performance.csv')
+    except FileNotFoundError:
+        print("⚠️ File not found. Please ensure amazon_sales.csv is in the directory.")
