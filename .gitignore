@@ -8,7 +8,7 @@ env/
 .env
 
 # Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+.ipynb_checkpoints////
 
 # Data files (optional - ignore if they are too large for GitHub)
 *.csv
