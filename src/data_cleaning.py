@@ -9,6 +9,7 @@ print(data.head())
 
 # Total Sales
 total_sales = data["Sales"].sum()
+
 print("Total Sales:", total_sales)
 
 # Sales by Category
